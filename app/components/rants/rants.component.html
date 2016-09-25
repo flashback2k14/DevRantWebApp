@@ -8,7 +8,7 @@
       <div class="mdl-shadow--2dp card--styling">
         <div class="mdl-card__title">
           <div class="mdl-typography--display-1 add--pointer" 
-               (click)="goToProfile(rant.user_id)">
+               (click)="goToProfile(rant.user_id); $event.stopPropagation()">
                {{rant.user_username}}
           </div>
           <div class="mdl-layout-spacer"></div>
@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="mdl-card__supporting-text add--pointer" 
-             (click)="goToRant(rant.id)">
+             (click)="goToRant(rant.id); $event.stopPropagation()">
           <div class="mdl-typography--headline">{{rant.text}}</div>
         </div>
         <div class="mdl-card__actions mdl-card--border">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 import { SimpleRant } from "../../models/simple-rant";
 import { DevrantService } from "../../services/devrant.service";
@@ -13,7 +14,10 @@ import { DevrantService } from "../../services/devrant.service";
 export class RantsComponent implements OnInit {
   rants: SimpleRant[];
 
-  constructor (private devrantService: DevrantService) { }
+  constructor (
+    private devrantService: DevrantService,
+    private router: Router
+  ) { }
 
   ngOnInit (): void {
     this.devrantService.getRants()
@@ -21,6 +25,7 @@ export class RantsComponent implements OnInit {
         this.rants = rants;
       })
       .catch(error => {
+        // ToDo: Show Errors the User
         console.error(error);
       });
   }
@@ -30,6 +35,7 @@ export class RantsComponent implements OnInit {
   }
 
   goToRant (rantId: number): void {
-    alert("Test: RantId: " + rantId);
+    let link = ["/rant", rantId];
+    this.router.navigate(link);
   }
 }
