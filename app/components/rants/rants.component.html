@@ -1,0 +1,33 @@
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--2-col"></div>
+
+  <div class="mdl-cell mdl-cell--8-col">
+    <h3 *ngIf="rants">Fetched Rants: {{rants.length}}</h3>
+
+    <div *ngFor="let rant of rants" class="card--spacing">
+      <div class="mdl-shadow--2dp card--styling">
+        <div class="mdl-card__title">
+          <div class="mdl-typography--display-1 add--pointer" 
+               (click)="goToProfile(rant.user_id)">
+               {{rant.user_username}}
+          </div>
+          <div class="mdl-layout-spacer"></div>
+          <div class="mdl-typography--display-1 score--color">
+            {{rant.score}}
+          </div>
+        </div>
+        <div class="mdl-card__supporting-text add--pointer" 
+             (click)="goToRant(rant.id)">
+          <div class="mdl-typography--headline">{{rant.text}}</div>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <div class="mdl-typography--text date--color date--padding">
+            {{rant.created_time | timestampDate | date:"dd.MM.yyyy, hh:MM:ss"}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-cell mdl-cell--2-col"></div>
+</div>

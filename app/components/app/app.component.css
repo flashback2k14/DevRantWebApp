@@ -1,0 +1,15 @@
+.headline--styling {
+  margin: 10px 0 10px -60px;
+}
+
+.footer--styling {
+  height: 30px;
+  margin: 0;
+  padding: 8px 16px 2px 16px;
+  background: #414159;
+}
+
+.anchor--styling {
+  color: white;
+  text-decoration: none;
+}

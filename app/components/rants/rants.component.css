@@ -1,0 +1,24 @@
+.card--spacing {
+  margin-bottom: 20px;
+}
+
+.card--styling {
+  background: white;
+  border-radius: 4px;
+}
+
+.score--color {
+  color: #F50057;
+}
+
+.date--color {
+  color: #37474F;
+}
+
+.date--padding {
+  padding-left: 10px;
+}
+
+.add--pointer {
+  cursor: pointer;
+}
