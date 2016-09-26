@@ -7,17 +7,8 @@ import { DevrantService } from "../../services/devrant.service";
 
 @Component({
   selector: "rant",
-  template: `
-    <h2>Rant</h2>
-
-    <button (click)="goBack()">Back</button>
-
-    <div *ngIf="rant">
-      <div>{{rant.rant.id}}</div>
-      <div>{{rant.rant.text}}</div>
-      <pre>{{rant | json}}</pre>
-    </div>
-  `
+  templateUrl: "app/components/rant/rant.component.html",
+  styleUrls: ["app/components/rant/rant.component.css"]
 })
 
 export class RantComponent implements OnInit {
@@ -34,7 +25,6 @@ export class RantComponent implements OnInit {
       this.devrantService.getRant(id)
         .then(rant => {
           this.rant = rant;
-          console.log(this.rant.rant.text);
         })
         .catch(error => {
           // ToDo: Show Error to the User

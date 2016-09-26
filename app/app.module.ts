@@ -8,6 +8,8 @@ import { routing } from "./app.routing";
 import { AppComponent } from "./components/app/app.component"
 import { RantsComponent } from "./components/rants/rants.component";
 import { RantComponent } from "./components/rant/rant.component";
+import { RantcardComponent } from "./components/rantcard/rant-card.component";
+import { CommentcardComponent } from "./components/commentcard/comment-card.component";
 import { ProfileComponent } from "./components/profile/profile.component";
 // Pipes
 import { TimestampDatePipe } from "./pipes/timestamp-date.pipe";
@@ -24,6 +26,8 @@ import { DevrantService } from "./services/devrant.service";
     AppComponent,
     RantsComponent,
     RantComponent,
+    RantcardComponent,
+    CommentcardComponent,
     ProfileComponent,
     TimestampDatePipe
   ],

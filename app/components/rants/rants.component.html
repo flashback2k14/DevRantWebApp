@@ -1,33 +1,35 @@
 <div class="mdl-grid">
+
+  <!-- 1. Row -->
+  <!-- Headline -->
+  <div class="mdl-cell mdl-cell--12-col">
+    <h3 *ngIf="rants" class="mdl-typography--display-2 mdl-typography--text-center">Fetched Rants: {{rants.length}}</h3>
+  </div>
+
+  <!-- 2. Row -->
+  <!-- Left Spacing -->
   <div class="mdl-cell mdl-cell--2-col"></div>
 
-  <div class="mdl-cell mdl-cell--8-col">
-    <h3 *ngIf="rants">Fetched Rants: {{rants.length}}</h3>
-
-    <div *ngFor="let rant of rants" class="card--spacing">
-      <div class="mdl-shadow--2dp card--styling">
-        <div class="mdl-card__title">
-          <div class="mdl-typography--display-1 add--pointer" 
-               (click)="goToProfile(rant.user_id); $event.stopPropagation()">
-               {{rant.user_username}}
-          </div>
-          <div class="mdl-layout-spacer"></div>
-          <div class="mdl-typography--display-1 score--color">
-            {{rant.score}}
-          </div>
-        </div>
-        <div class="mdl-card__supporting-text add--pointer" 
-             (click)="goToRant(rant.id); $event.stopPropagation()">
-          <div class="mdl-typography--headline">{{rant.text}}</div>
-        </div>
-        <div class="mdl-card__actions mdl-card--border">
-          <div class="mdl-typography--text date--color date--padding">
-            {{rant.created_time | timestampDate | date:"dd.MM.yyyy, hh:MM:ss"}}
-          </div>
-        </div>
+  <!-- Left Content Area -->
+  <div class="mdl-cell mdl-cell--4-col">
+    <div *ngFor="let rant of rants; let i = index" class="card--spacing">
+      <!-- Show even rants -->
+      <div *ngIf="i % 2 === 0">
+        <rant-card [rant]="rant"></rant-card>
       </div>
     </div>
   </div>
 
+  <!-- Right Content Area -->
+  <div class="mdl-cell mdl-cell--4-col fix-right-top-card-offset">
+    <div *ngFor="let rant of rants; let i = index" class="card--spacing">
+      <!-- Show odd rants -->
+      <div *ngIf="i % 2 !== 0">
+        <rant-card [rant]="rant"></rant-card>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Spacing -->
   <div class="mdl-cell mdl-cell--2-col"></div>
 </div>

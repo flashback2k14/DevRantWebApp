@@ -1,0 +1,27 @@
+<div class="mdl-shadow--2dp card--styling">
+  <div class="mdl-card__title">
+    <div class="mdl-typography--display-1 add--pointer" 
+        (click)="goToProfile(rant.user_id); $event.stopPropagation()">
+        {{rant.user_username}}
+    </div>
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-typography--display-1 score--color">
+      {{rant.score}}
+    </div>
+  </div>
+  <div class="mdl-card__supporting-text add--pointer"
+      (click)="goToRant(rant.id); $event.stopPropagation()">
+    <div class="mdl-typography--headline mdl-typography--text-center">
+      {{rant.text}}
+    </div>
+    <div *ngIf="rant.attached_image" 
+        class="mdl-typography--text-center">
+      <img src="{{rant.attached_image.url}}" height="{{imgHeight}}" width="{{imgWidth}}" alt="rant image">
+    </div>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <div class="mdl-typography--text date--color date--padding">
+      {{rant.created_time | timestampDate | date:"dd.MM.yyyy, hh:MM:ss"}}
+    </div>
+  </div>
+</div>
