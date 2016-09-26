@@ -29,4 +29,8 @@ export class RantcardComponent {
     let link = ["/rant", rantId];
     this.router.navigate(link);
   }
+
+  searchForTag (tag: string) {
+    alert("Tag: " + tag);
+  }
 }
