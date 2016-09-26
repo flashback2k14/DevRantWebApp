@@ -3,7 +3,7 @@ import { RantComment } from "./rant-comment";
 
 
 export class FullRant {
-  "rant": SimpleRant;
-  "comments": RantComment[];
-  "success": boolean;
+  rant: SimpleRant;
+  comments: RantComment[];
+  success: boolean;
 }

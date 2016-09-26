@@ -11,7 +11,7 @@ import { DevrantService } from "../../services/devrant.service";
 })
 
 export class RantsComponent implements OnInit {
-  rants: SimpleRant[];
+  private rants: SimpleRant[];
 
   constructor (private devrantService: DevrantService) { }
 

@@ -12,7 +12,7 @@ import { DevrantService } from "../../services/devrant.service";
 })
 
 export class RantComponent implements OnInit {
-  rant: FullRant;
+  private rant: FullRant;
   
   constructor (
     private devrantService: DevrantService,

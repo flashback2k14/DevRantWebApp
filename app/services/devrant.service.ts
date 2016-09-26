@@ -5,6 +5,7 @@ import "rxjs/add/operator/toPromise";
 
 import { SimpleRant } from "../models/simple-rant";
 import { FullRant } from "../models/full-rant";
+import { Profile } from "../models/profile";
 
 
 @Injectable()
@@ -28,7 +29,7 @@ export class DevrantService {
     return this.http
       .get(`${this.baseUrl}/rants`, {search: params})
       .toPromise()
-      .then(this.extractData)
+      .then(this.extractRantsData)
       .catch(error => error);
   }
 
@@ -36,17 +37,30 @@ export class DevrantService {
     return this.http
       .get(`${this.baseUrl}/rants/${id}?app=3`)
       .toPromise()
-      .then(this.extraceSingleData)
+      .then(this.extractRantData)
       .catch(error => error);
   }
 
-  private extractData (res: Response) {
+  getProfile (id: number): Promise<Profile> {
+    return this.http
+      .get(`https://www.devrant.io/api/users/${id}?app=3`)
+      .toPromise()
+      .then(this.extractProfileData)
+      .catch(error => error);
+  }
+
+  private extractRantsData (res: Response) {
     let data: SimpleRant[] = res.json().rants;
     return data || { };
   }
 
-  private extraceSingleData (res: Response) {
+  private extractRantData (res: Response) {
     let data: FullRant = res.json();
+    return data || { };
+  }
+
+  private extractProfileData (res: Response) {
+    let data: Profile = res.json();
     return data || { };
   }
 }
