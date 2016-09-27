@@ -2,6 +2,14 @@
   margin: 10px 0 10px -60px;
 }
 
+.fix-rb-top-offset {
+  margin-top: -5px;
+}
+
+.rb--spacing {
+  margin-right: 20px;
+}
+
 .footer--styling {
   height: 40px;
   margin: 0;

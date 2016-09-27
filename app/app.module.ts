@@ -15,6 +15,7 @@ import { ProfileComponent } from "./components/profile/profile.component";
 import { TimestampDatePipe } from "./pipes/timestamp-date.pipe";
 // Services
 import { DevrantService } from "./services/devrant.service";
+import { ConfigExchangeService } from "./services/config-exchange.service";
 
 @NgModule({
   imports: [ 
@@ -32,7 +33,8 @@ import { DevrantService } from "./services/devrant.service";
     TimestampDatePipe
   ],
   providers: [
-    DevrantService
+    DevrantService,
+    ConfigExchangeService
   ],
   bootstrap: [ AppComponent ]
 })

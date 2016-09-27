@@ -6,6 +6,34 @@
         DevRant
       </span>
       <div class="mdl-layout-spacer"></div>
+      <div class="fix-rb-top-offset">
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect rb--spacing" for="option-1">
+          <input #rb1 type="radio" id="option-1" class="mdl-radio__button" 
+                 name="options" value="algo" checked
+                 (click)="changeSort(rb1.value)">
+          <span class="mdl-radio__label">algo</span>
+        </label>
+
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect rb--spacing" for="option-2">
+          <input #rb2 type="radio" id="option-2" class="mdl-radio__button" 
+                 name="options" value="recent"
+                 (click)="changeSort(rb2.value)">
+          <span class="mdl-radio__label">recent</span>
+        </label>
+
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect rb--spacing" for="option-3">
+          <input #rb3 type="radio" id="option-3" class="mdl-radio__button" 
+                 name="options" value="top"
+                 (click)="changeSort(rb3.value)">
+          <span class="mdl-radio__label">top</span>
+        </label>
+      </div>
+      <div>
+        <button class="mdl-button mdl-js-button mdl-button--icon"
+              (click)="loadMore([rb1.checked, rb2.checked, rb3.checked])">
+          <i class="material-icons">autorenew</i>
+        </button>
+      </div>
     </div>
   </header>
 
