@@ -17,8 +17,8 @@ export class AppComponent {
     this.configExchangeService.changeSortMode(mode);
   }
 
-  loadMore (rbValue: Array<boolean>): void {
-    let sm = this.extractValue(rbValue);
+  loadMore (rbValues: Array<boolean>): void {
+    let sm = this.extractValue(rbValues);
     if (sm) {
       this.configExchangeService.loadMore(sm);
     } else {

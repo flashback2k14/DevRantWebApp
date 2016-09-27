@@ -33,7 +33,7 @@ export class RantsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit (): void {
-    this.devrantService.getRants()
+    this.devrantService.getRants(this.getMode("rant-sort-mode"))
       .then(rants => {
         this.rants = rants;
       })
@@ -50,7 +50,7 @@ export class RantsComponent implements OnInit, OnDestroy {
 
   private changeSortModeAndReload (sortMode: string): void {
     this.toggleLoading(true);
-
+    this.saveMode("rant-sort-mode", sortMode);
     this.devrantService.getRants(sortMode)
       .then(rants => {
         this.rants = null;
@@ -90,5 +90,18 @@ export class RantsComponent implements OnInit, OnDestroy {
     } else {
       this.loadingComponent.classList.remove("is-active");
     }
+  }
+
+  private saveMode (key: string, value: string): void {
+    if (value) {
+      localStorage.setItem(key, value);
+    }
+  }
+
+  private getMode (key: string): string {
+    if (localStorage.getItem(key)) {
+      return localStorage.getItem(key);
+    }
+    return undefined;
   }
 }
