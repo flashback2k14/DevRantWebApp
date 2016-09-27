@@ -17,7 +17,7 @@ export class DevrantService {
   }
 
   getRants (sortMethod: string = "algo", 
-            limitCount: string = "10", 
+            limitCount: string = "50", 
             skipCount: string = "0"): Promise<SimpleRant[]> {
 
     let params = new URLSearchParams();
@@ -60,7 +60,7 @@ export class DevrantService {
   }
 
   private extractProfileData (res: Response) {
-    let data: Profile = res.json();
+    let data: Profile = res.json().profile;
     return data || { };
   }
 }

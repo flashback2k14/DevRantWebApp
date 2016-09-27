@@ -33,7 +33,8 @@ export class RantsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit (): void {
-    this.devrantService.getRants(this.getMode("rant-sort-mode"))
+    this.devrantService
+      .getRants(this.getMode("rant-sort-mode"), this.getMode("rant-length"))
       .then(rants => {
         this.rants = rants;
       })
@@ -66,11 +67,12 @@ export class RantsComponent implements OnInit, OnDestroy {
 
   private loadMoreRants (sortMode: string): void {
     this.toggleLoading(true);
-    let currentLength: string = this.rants ? this.rants.length.toString() : "0";
+    let currentLength: string = this.rants ? this.rants.length.toString() : undefined;
     
     this.devrantService.getRants(sortMode, undefined, currentLength)
       .then(rants => {
         this.rants.push(...rants);
+        this.saveMode("rant-length", this.rants.length.toString());
         this.toggleLoading(false);
       })
       .catch(error => {

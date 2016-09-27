@@ -1,0 +1,5 @@
+.fixed-fab-position {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+}
