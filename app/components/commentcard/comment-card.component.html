@@ -1,6 +1,7 @@
 <div class="mdl-shadow--2dp card--styling">
   <div class="mdl-card__title">
     <div class="mdl-typography--display-1 add--pointer" 
+        data-balloon-length="small" data-balloon="Go to Profile" data-balloon-pos="top"
         (click)="goToProfile(comment.user_id); $event.stopPropagation()">
         {{comment.user_username}} [{{comment.user_score}}]
     </div>

@@ -1,6 +1,7 @@
 <div class="mdl-shadow--2dp card--styling">
   <div class="mdl-card__title">
-    <div class="mdl-typography--display-1 add--pointer" 
+    <div class="mdl-typography--display-1 add--pointer"
+        data-balloon-length="small" data-balloon="Go to Profile" data-balloon-pos="top"
         (click)="goToProfile(rant.user_id); $event.stopPropagation()">
         {{rant.user_username}} [{{rant.user_score}}]
     </div>
@@ -23,7 +24,8 @@
     <div class="mdl-typography--text date--color date--padding">
       <span>{{rant.created_time | timestampDate | date:"dd.MM.yyyy, hh:MM:ss"}}</span>
       <span *ngIf="rant.tags.length > 0"> - [</span>
-      <span *ngFor="let tag of rant.tags" 
+      <span *ngFor="let tag of rant.tags"
+            data-balloon-length="small" data-balloon="Open Search" data-balloon-pos="down" 
             (click)="searchForTag(tag)" 
             class="add--pointer">{{tag}} 
       </span>

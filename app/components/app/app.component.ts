@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 
 import { ConfigExchangeService } from "../../services/config-exchange.service";
 
@@ -6,15 +7,29 @@ import { ConfigExchangeService } from "../../services/config-exchange.service";
 @Component({
   selector: "my-app",
   templateUrl: "app/components/app/app.component.html",
-  styleUrls: ["app/components/app/app.component.css"],
+  styleUrls: ["app/components/app/app.component.css"]
 })
 
 export class AppComponent {
 
-  constructor (private configExchangeService: ConfigExchangeService) { }
+  constructor (
+    private configExchangeService: ConfigExchangeService,
+    private router: Router
+  ) { }
 
   changeSort (mode: string): void {
     this.configExchangeService.changeSortMode(mode);
+  }
+
+  searchFor (event: KeyboardEvent, searchTerm: string) {
+    let keycode = event.keyCode;
+    if (keycode === 13) {
+      if (searchTerm.length <= 0) {
+        return;
+      }
+      let link = ["/search", searchTerm];
+      this.router.navigate(link);
+    }
   }
 
   loadMore (rbValues: Array<boolean>): void {

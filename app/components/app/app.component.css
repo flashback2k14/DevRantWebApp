@@ -3,11 +3,19 @@
 }
 
 .fix-rb-top-offset {
-  margin-top: -5px;
+  margin-top: -2px;
 }
 
 .rb--spacing {
   margin-right: 20px;
+}
+
+.search_term--spacing {
+  margin-right: 10px;
+}
+
+.search_button--spacing {
+  margin-right: 10px;
 }
 
 .footer--styling {

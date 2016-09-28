@@ -29,8 +29,21 @@
         </label>
       </div>
       <div>
+        <div *ngIf="showSearch" class="mdl-textfield mdl-js-textfield search_term--spacing">
+          <input class="mdl-textfield__input" type="text" #searchTerm
+                 placeholder="Enter the search term..." (keyup)="searchFor($event, searchTerm.value)">
+        </div>
+        
+        <button class="mdl-button mdl-js-button mdl-button--icon search_button--spacing"
+                data-balloon-length="small" data-balloon="Search for Rants" data-balloon-pos="down"
+                (click)="showSearch = !showSearch">
+          <i class="material-icons">search</i>
+        </button>
+      </div>
+      <div>
         <button class="mdl-button mdl-js-button mdl-button--icon"
-              (click)="loadMore([rb1.checked, rb2.checked, rb3.checked])">
+                data-balloon-length="small" data-balloon="Load more Rants" data-balloon-pos="down"
+                (click)="loadMore([rb1.checked, rb2.checked, rb3.checked])">
           <i class="material-icons">autorenew</i>
         </button>
       </div>
