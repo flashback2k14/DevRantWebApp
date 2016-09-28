@@ -31,6 +31,7 @@ export class RantcardComponent {
   }
 
   searchForTag (tag: string) {
-    alert("Tag: " + tag);
+    let link = ["/search", tag];
+    this.router.navigate(link);
   }
 }

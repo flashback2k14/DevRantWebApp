@@ -11,6 +11,7 @@ import { RantComponent } from "./components/rant/rant.component";
 import { RantcardComponent } from "./components/rantcard/rant-card.component";
 import { CommentcardComponent } from "./components/commentcard/comment-card.component";
 import { ProfileComponent } from "./components/profile/profile.component";
+import { SearchComponent } from "./components/search/search.component";
 // Pipes
 import { TimestampDatePipe } from "./pipes/timestamp-date.pipe";
 // Services
@@ -30,6 +31,7 @@ import { ConfigExchangeService } from "./services/config-exchange.service";
     RantcardComponent,
     CommentcardComponent,
     ProfileComponent,
+    SearchComponent,
     TimestampDatePipe
   ],
   providers: [
