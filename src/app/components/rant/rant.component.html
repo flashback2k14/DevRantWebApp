@@ -1,0 +1,31 @@
+<div class="mdl-grid">
+  <!-- 1. Row -->
+  <!-- Left Spacing -->
+  <div class="mdl-cell mdl-cell--2-col"></div>
+  <!-- Content Area -->
+  <div class="mdl-cell mdl-cell--8-col">
+
+    <div *ngIf="rant">
+      <rant-card 
+        [rant]="rant.rant"
+        [imgHeight]="rant.rant.attached_image.height"
+        [imgWidth]="rant.rant.attached_image.width">
+      </rant-card>
+
+      <div *ngFor="let comment of rant.comments">
+        <comment-card [comment]="comment"></comment-card>
+      </div>
+    </div>
+
+  </div>
+  <!-- Right Spacing -->
+  <div class="mdl-cell mdl-cell--2-col"></div>
+
+  <!-- FAB -->
+  <button class="mdl-button mdl-js-button mdl-button--fab 
+                 mdl-js-ripple-effect button--colors
+                 fixed-fab-position"
+          (click)="goBack()">
+    <i class="material-icons">keyboard_backspace</i>
+  </button>
+</div>

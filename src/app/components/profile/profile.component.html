@@ -1,0 +1,126 @@
+<div class="mdl-grid">
+  <!-- 1. Row -->
+  <!-- Left Spacing -->
+  <div class="mdl-cell mdl-cell--2-col"></div>
+  <!-- Content Area -->
+  <div class="mdl-cell mdl-cell--8-col">
+    <div *ngIf="profile">
+
+      <!-- Biography Card -->
+      <div class="mdl-shadow--2dp card_main--styling">
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--12-col card_main-headline">
+            <div class="mdl-typography--display-3 mdl-typography--text-center">
+              {{profile.username}} [{{profile.score}}]
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--12-col"></div>
+          <div class="mdl-cell mdl-cell--3-col">
+            <div class="mdl-typography--display-1 text--color">About</div>
+          </div>
+          <div class="mdl-cell mdl-cell--9-col">
+            <div class="mdl-typography--display-1 text--color">
+              {{profile.about}}
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--3-col">
+            <div class="mdl-typography--display-1 text--color">Location</div>
+          </div>
+          <div class="mdl-cell mdl-cell--9-col">
+            <div class="mdl-typography--display-1 text--color">
+              {{profile.location}}
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--3-col">
+            <div class="mdl-typography--display-1 text--color">Joined</div>
+          </div>
+          <div class="mdl-cell mdl-cell--9-col">
+            <div class="mdl-typography--display-1 text--color">
+              {{profile.created_time | timestampDate | date: format}}
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--3-col">
+            <div class="mdl-typography--display-1 text--color">Skills</div>
+          </div>
+          <div class="mdl-cell mdl-cell--9-col">
+            <div class="mdl-typography--display-1 text--color">
+              {{profile.skills}}
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--3-col">
+            <div class="mdl-typography--display-1 text--color">Github</div>
+          </div>
+          <div class="mdl-cell mdl-cell--9-col">
+            <div class="mdl-typography--display-1 text--color">
+              {{profile.github}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rants Card -->
+      <div class="mdl-shadow--2dp card_content--styling add--pointer"
+          data-balloon-length="medium" data-balloon="See created Rants" data-balloon-pos="down"
+          (click)="showRants = !showRants">
+        <div class="mdl-typography--display-1 text--color">
+          Rants: {{profile.content.counts.rants}}
+        </div>
+      </div>
+      <div *ngIf="showRants">
+        <div *ngFor="let rant of profile.content.content.rants">
+          <rant-card [rant]="rant"></rant-card>
+        </div>
+      </div>
+
+      <!-- Upvoted Card -->
+      <div class="mdl-shadow--2dp card_content--styling add--pointer"
+          data-balloon-length="medium" data-balloon="See upvoted Rants" data-balloon-pos="down"
+          (click)="showUpvoted = !showUpvoted">
+        <div class="mdl-typography--display-1 text--color">
+          Upvoted: {{profile.content.counts.upvoted}}
+        </div>
+      </div>
+      <div *ngIf="showUpvoted">
+        <div *ngFor="let rant of profile.content.content.upvoted">
+          <rant-card [rant]="rant"></rant-card>
+        </div>
+      </div>
+
+      <!-- Comments Card -->
+      <div class="mdl-shadow--2dp card_content--styling add--pointer"
+          data-balloon-length="medium" data-balloon="See comments" data-balloon-pos="down"
+          (click)="showComments = !showComments">
+        <div class="mdl-typography--display-1 text--color">
+          Comments: {{profile.content.counts.comments}}
+        </div>
+      </div>
+      <div *ngIf="showComments">
+        <div *ngFor="let comment of profile.content.content.comments">
+          <comment-card [comment]="comment"></comment-card>
+        </div>
+      </div>
+
+      <!-- Favorits Card-->
+      <div class="mdl-shadow--2dp card_content--styling add--pointer"
+          data-balloon-length="medium" data-balloon="See favorites" data-balloon-pos="down"
+          (click)="showFavs = !showFavs">
+        <div class="mdl-typography--display-1 text--color">
+          Favorites: {{profile.content.counts.favorites}}
+        </div>
+      </div>
+      <div *ngIf="showFavs">
+        <pre>{{profile.content.content.favorites | json}}</pre>
+      </div>
+    </div>
+  </div>
+  <!-- Right Spacing -->
+  <div class="mdl-cell mdl-cell--2-col"></div>
+
+  <!-- FAB -->
+  <button class="mdl-button mdl-js-button mdl-button--fab 
+                 mdl-js-ripple-effect mdl-button--colored
+                 fixed-fab-position"
+          (click)="goBack()">
+    <i class="material-icons">keyboard_backspace</i>
+  </button>
+</div>

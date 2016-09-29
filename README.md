@@ -1,5 +1,10 @@
 # DevRantWebApp
-Unofficial WebApp for DevRant built with Angular 2, TypeScript &amp; MDL
+Unofficial WebApp for devRant built with Angular 2, TypeScript &amp; MDL
+
+- requirements
+  - node
+  - npm
+  - angular-cli
 
 - install 
 ```bash
@@ -8,7 +13,7 @@ npm install
 
 - run 
 ```bash
-npm start
+ng serve
 ```
 
 - ToDo
