@@ -7,7 +7,7 @@ import { ConfigExchangeService } from "../../services/config-exchange.service";
 @Component({
   selector: "drv-app",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"]
+  styleUrls: ["./app.component.css", "../../shared/styles.css"]
 })
 
 export class AppComponent {
@@ -16,6 +16,10 @@ export class AppComponent {
     private configExchangeService: ConfigExchangeService,
     private router: Router
   ) { }
+
+  goToDevrant (): void {
+    window.open("https://www.devrant.io/", "_blank");
+  }
 
   changeSort (mode: string): void {
     this.configExchangeService.changeSortMode(mode);
