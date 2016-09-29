@@ -1,6 +1,6 @@
 {
   "name": "devrant-web-app",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": {
     "name": "flashback2k14"
   },
@@ -12,7 +12,10 @@
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "clean": "rm -rf dist/",
+    "build": "ng build -prod --bh /DevRantWebApp/",
+    "deploy": "npm run clean && npm run build && ng github-pages:deploy --skip-build "
   },
   "dependencies": {
     "@angular/common": "2.0.0",

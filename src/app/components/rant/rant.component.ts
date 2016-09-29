@@ -8,7 +8,7 @@ import { DevrantService } from "../../services/devrant.service";
 @Component({
   selector: "rant-wrapper",
   templateUrl: "./rant.component.html",
-  styleUrls: ["./rant.component.css"]
+  styleUrls: ["../../shared/styles.css"]
 })
 
 export class RantComponent implements OnInit {

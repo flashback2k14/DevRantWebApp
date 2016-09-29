@@ -7,7 +7,7 @@ import { SimpleRant } from "../../models/simple-rant";
 @Component({
   selector: "rant-card",
   templateUrl: "./rant-card.component.html",
-  styleUrls: ["./rant-card.component.css"]
+  styleUrls: ["./rant-card.component.css", "../../shared/styles.css"]
 })
 
 export class RantcardComponent {

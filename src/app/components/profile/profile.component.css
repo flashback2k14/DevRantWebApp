@@ -1,5 +1,4 @@
 .card_main--styling {
-  /*height: 400px;*/
   background: white;
   border-radius: 4px;
 }
@@ -19,14 +18,4 @@
 
 .text--color {
   color: #37474F;
-}
-
-.add--pointer {
-  cursor: pointer;
-}
-
-.fixed-fab-position {
-  position: fixed;
-  bottom: 60px;
-  right: 60px;
 }

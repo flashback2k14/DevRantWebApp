@@ -8,7 +8,7 @@ import { DevrantService } from "../../services/devrant.service";
 @Component({
   selector: "profile-wrapper",
   templateUrl: "./profile.component.html",
-  styleUrls: ["./profile.component.css"]
+  styleUrls: ["./profile.component.css", "../../shared/styles.css"]
 })
 
 export class ProfileComponent implements OnInit {
