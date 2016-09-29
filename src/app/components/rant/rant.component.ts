@@ -6,14 +6,14 @@ import { DevrantService } from "../../services/devrant.service";
 
 
 @Component({
-  selector: "rant",
+  selector: "rant-wrapper",
   templateUrl: "./rant.component.html",
   styleUrls: ["./rant.component.css"]
 })
 
 export class RantComponent implements OnInit {
   private rant: FullRant;
-  
+
   constructor (
     private devrantService: DevrantService,
     private route: ActivatedRoute

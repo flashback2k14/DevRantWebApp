@@ -7,7 +7,7 @@ import { ConfigExchangeService } from "../../services/config-exchange.service";
 
 
 @Component({
-  selector: "rants",
+  selector: "rants-list",
   templateUrl: "./rants.component.html",
   styleUrls: ["./rants.component.css"]
 })
@@ -68,7 +68,7 @@ export class RantsComponent implements OnInit, OnDestroy {
   private loadMoreRants (sortMode: string): void {
     this.toggleLoading(true);
     let currentLength: string = this.rants ? this.rants.length.toString() : undefined;
-    
+
     this.devrantService.getRants(sortMode, undefined, currentLength)
       .then(rants => {
         this.rants.push(...rants);

@@ -6,7 +6,7 @@ import { DevrantService } from "../../services/devrant.service";
 
 
 @Component({
-  selector: "profile",
+  selector: "profile-wrapper",
   templateUrl: "./profile.component.html",
   styleUrls: ["./profile.component.css"]
 })

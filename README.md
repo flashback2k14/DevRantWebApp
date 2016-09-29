@@ -17,7 +17,6 @@ ng serve
 ```
 
 - ToDo
-  - Port to angular-cli
   - Refactoring
     - remove duplicated styling classes
     - extract duplicated logic into util classes

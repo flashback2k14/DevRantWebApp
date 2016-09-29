@@ -6,7 +6,7 @@ import { SimpleRant } from "../../models/simple-rant";
 
 
 @Component({
-  selector: "search",
+  selector: "search-rants",
   templateUrl: "./search.component.html",
   styleUrls: ["./search.component.css"]
 })

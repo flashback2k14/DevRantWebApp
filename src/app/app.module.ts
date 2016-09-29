@@ -5,7 +5,7 @@ import { HttpModule } from "@angular/http";
 // Routing
 import { routing } from "./app.routing";
 // Components
-import { AppComponent } from "./components/app/app.component"
+import { AppComponent } from "./components/app/app.component";
 import { RantsComponent } from "./components/rants/rants.component";
 import { RantComponent } from "./components/rant/rant.component";
 import { RantcardComponent } from "./components/rantcard/rant-card.component";
@@ -19,12 +19,12 @@ import { DevrantService } from "./services/devrant.service";
 import { ConfigExchangeService } from "./services/config-exchange.service";
 
 @NgModule({
-  imports: [ 
+  imports: [
     BrowserModule,
     HttpModule,
     routing
   ],
-  declarations: [ 
+  declarations: [
     AppComponent,
     RantsComponent,
     RantComponent,

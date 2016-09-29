@@ -12,13 +12,13 @@ import { Profile } from "../models/profile";
 export class DevrantService {
   private baseUrl: string;
 
-  constructor (private http: Http) { 
+  constructor (private http: Http) {
     this.baseUrl = "https://www.devrant.io/api";
   }
 
-  getRants (sortMethod: string = "algo", 
-            limitCount: string = "50", 
-            skipCount: string = "0"): Promise<SimpleRant[]> {
+  getRants (sortMethod = "algo",
+            limitCount = "50",
+            skipCount = "0"): Promise<SimpleRant[]> {
 
     let params = new URLSearchParams();
     params.set("app", "3");

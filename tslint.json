@@ -63,7 +63,7 @@
     ],
     "quotemark": [
       true,
-      "single"
+      "double"
     ],
     "radix": true,
     "semicolon": [
@@ -94,7 +94,7 @@
     ],
 
     "directive-selector-prefix": [true, "app"],
-    "component-selector-prefix": [true, "app"],
+    "component-selector-prefix": [false, "app"],
     "directive-selector-name": [true, "camelCase"],
     "component-selector-name": [true, "kebab-case"],
     "directive-selector-type": [true, "attribute"],
