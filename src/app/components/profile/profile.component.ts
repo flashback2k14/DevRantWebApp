@@ -13,11 +13,20 @@ import { DevrantService } from "../../services/devrant.service";
 
 export class ProfileComponent implements OnInit {
   private profile: Profile;
+  private showRants: boolean;
+  private showUpvoted: boolean;
+  private showComments: boolean;
+  private showFavs: boolean;
 
   constructor (
     private devrantService: DevrantService,
     private route: ActivatedRoute
-  ) { }
+  ) { 
+    this.showRants = false;
+    this.showUpvoted = false;
+    this.showComments = false;
+    this.showFavs = false;
+  }
 
   ngOnInit (): void {
     this.route.params.forEach((params: Params) => {

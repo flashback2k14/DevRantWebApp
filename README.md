@@ -14,4 +14,9 @@ npm install
 - run 
 ```bash
 ng serve
+open http://localhost:4200
 ```
+
+- ToDo
+  - show Avatars: 
+    - https://avatars.devrant.io/v-10_c-3_....jpg

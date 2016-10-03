@@ -11,11 +11,14 @@ import { ConfigExchangeService } from "../../services/config-exchange.service";
 })
 
 export class AppComponent {
+  private showSearch: boolean;
 
   constructor (
     private configExchangeService: ConfigExchangeService,
     private router: Router
-  ) { }
+  ) { 
+    this.showSearch = false;
+  }
 
   goToDevrant (): void {
     window.open("https://www.devrant.io/", "_blank");
